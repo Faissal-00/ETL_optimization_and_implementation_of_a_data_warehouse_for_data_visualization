@@ -1,0 +1,29 @@
+Data Mart Utilisateurs :
+
+Age
+Gender
+City
+Country
+UserSignUpDate
+UserLastPurchaseDate
+UserStatus
+UserTotalPurchases
+UserSegment
+UserSourceType
+UserLastLoginDate
+DatePurchase
+UserPurchaseFrequency
+ReSignUpDelay
+SIgnUpPurchaseDelay
+
+Data Mart Ventes :
+
+City
+Country
+ProductName
+Category
+Subcategory
+Price
+Quantity
+DatePurchase
+Rating

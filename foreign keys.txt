@@ -1,0 +1,78 @@
+" 
+ ALTER TABLE CountryDIM 
+ ADD CONSTRAINT fk_CountryDIM_CityDIM 
+ FOREIGN KEY (CityID)
+ REFERENCES CityDIM([CityID])
+ ON DELETE CASCADE;
+
+ ALTER TABLE UserDIM 
+ ADD CONSTRAINT fk_UserDIM_GenderDIM 
+ FOREIGN KEY (GenderID)
+ REFERENCES GenderDIM([GenderID])
+ ON DELETE CASCADE;
+
+ ALTER TABLE UserDIM 
+ ADD CONSTRAINT fk_UserDIM_CountryDIM 
+ FOREIGN KEY (CountryID)
+ REFERENCES CountryDIM([CountryID])
+ ON DELETE CASCADE;
+
+ ALTER TABLE UserDIM 
+ ADD CONSTRAINT fk_UserDIM_UserStatusDIM
+ FOREIGN KEY (UserStatusID)
+ REFERENCES UserStatusDIM([UserStatusID])
+ ON DELETE CASCADE;
+
+ ALTER TABLE UserDIM 
+ ADD CONSTRAINT fk_UserDIM_SegmentDIM
+ FOREIGN KEY (UserSegmentID)
+ REFERENCES UserSegmentDIM([UserSegmentID])
+ ON DELETE CASCADE;
+
+ ALTER TABLE UserDIM 
+ ADD CONSTRAINT fk_UserDIM_UserLocationDIM
+ FOREIGN KEY (UserLocationID)
+ REFERENCES UserLocationDIM([UserLocationID])
+ ON DELETE CASCADE;
+
+ ALTER TABLE UserDIM 
+ ADD CONSTRAINT fk_UserDIM_UserSourceTypeDIM 
+ FOREIGN KEY (UserSourceTypeID)
+ REFERENCES UserSourceTypeDIM([UserSourceTypeID])
+ ON DELETE CASCADE;
+
+ ALTER TABLE UserDIM 
+ ADD CONSTRAINT fk_UserDIM_UserPurchaseFrequencyDIM
+ FOREIGN KEY (UserPurchaseFrequencyID)
+ REFERENCES UserPurchaseFrequencyDIM([UserPurchaseFrequencyID]) 
+ ON DELETE CASCADE;
+
+ ALTER TABLE ProductDIM 
+ ADD CONSTRAINT fk_ProductDIM_SubcategoryDIM  
+ FOREIGN KEY (SubcategoryID)
+ REFERENCES SubcategoryDIM([SubcategoryID]) 
+ ON DELETE CASCADE;
+
+ ALTER TABLE ProductDIM 
+ ADD CONSTRAINT fk_ProductDIM_CategoryDIM 
+ FOREIGN KEY (CategoryID)
+ REFERENCES CategoryDIM([CategoryID]) 
+ ON DELETE CASCADE;
+
+ ALTER TABLE PurchasesFact 
+ ADD CONSTRAINT fk_PurchasesFact_UserDIM 
+ FOREIGN KEY (UserID)
+ REFERENCES UserDIM([UserID]) ON DELETE CASCADE;
+
+ ALTER TABLE PurchasesFact 
+ ADD CONSTRAINT fk_PurchasesFact_ProductDIM 
+ FOREIGN KEY (ProductID)
+ REFERENCES ProductDIM([ProductID]) 
+ ON DELETE CASCADE;
+
+ ALTER TABLE PurchasesFact 
+ ADD CONSTRAINT fk_PurchasesFact_DatePurchaseDIM 
+ FOREIGN KEY (DatePurchaseID)
+ REFERENCES DatePurchaseDIM([DatePurchaseID])
+ ON DELETE CASCADE;
+"
