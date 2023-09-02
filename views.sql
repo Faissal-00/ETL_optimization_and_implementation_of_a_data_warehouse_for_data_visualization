@@ -60,3 +60,9 @@ INNER JOIN ProductDIM p ON pf.[ProductID] = p.[ProductID]
 INNER JOIN CategoryDIM ccat ON p.[CategoryID] = ccat.[CategoryID]
 INNER JOIN SubcategoryDIM scat ON p.[SubcategoryID] = scat.[SubcategoryID]
 INNER JOIN DatePurchaseDIM dp ON pf.[DatePurchaseID] = dp.[DatePurchaseID];
+
+
+
+SELECT COLUMN_NAME
+FROM INFORMATION_SCHEMA.COLUMNS
+WHERE TABLE_NAME = 'Ventes';
